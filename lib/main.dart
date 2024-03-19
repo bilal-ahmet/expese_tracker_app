@@ -1,3 +1,4 @@
+import 'package:expese_tracker_app/pages/my_app_view.dart';
 import 'package:flutter/material.dart';
 
 void main() => runApp(const MyApp());
@@ -8,15 +9,18 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Material App',
-      home: Scaffold(
-        appBar: AppBar(
-          title: const Text('Material App Bar'),
-        ),
-        body: const Center(
-          child: Text('Hello World'),
-        ),
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+        colorScheme: ColorScheme.light(
+          background: Colors.grey.shade100,
+          onBackground: Colors.black,
+          primary: const Color(0xFF00B2E7),
+          secondary: const Color(0xFFE064F7),
+          tertiary: const Color(0xFFFF8D6C),
+          
+        )
       ),
+      home: const MyAppView(),
     );
   }
 }
