@@ -63,7 +63,7 @@ class MainScreen extends StatelessWidget {
                   children: [
                     IconButton(
                         onPressed: () {},
-                        icon: const Icon(CupertinoIcons.settings))
+                        icon: const Icon(Icons.settings))
                   ],
                 )
               ],

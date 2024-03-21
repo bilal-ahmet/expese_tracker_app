@@ -1,3 +1,4 @@
+import 'package:expese_tracker_app/data/data.dart';
 import 'package:flutter/material.dart';
 
 class ListViewDuty extends StatelessWidget {
@@ -7,8 +8,8 @@ class ListViewDuty extends StatelessWidget {
   Widget build(BuildContext context) {
     return Expanded(
       child: ListView.builder(
-        itemCount: 8,
-        itemBuilder: (context, int i) {
+        itemCount: transactionsData.length,
+        itemBuilder: (context, index) {
           return Padding(
             padding: const EdgeInsets.only(bottom: 16.0),
             child: Container(
@@ -28,14 +29,15 @@ class ListViewDuty extends StatelessWidget {
                               width: 50,
                               height: 50,
                               decoration: BoxDecoration(
-                                  color: Colors.yellow.shade700, shape: BoxShape.circle),
+                                  color: transactionsData[index]["color"], shape: BoxShape.circle),
                             ),
-                            const Icon(Icons.food_bank, color: Colors.white,)
+                            transactionsData[index]["icon"],
+                            //const Icon(Icons.food_bank, color: Colors.white,)
                           ],
                         ),
                         const SizedBox(width: 12,),
                         Text(
-                          "Food",
+                          transactionsData[index]["name"],
                           style: TextStyle(
                               fontSize: 14,
                               fontWeight: FontWeight.w500,
@@ -45,16 +47,17 @@ class ListViewDuty extends StatelessWidget {
                       ],
                     ),
                     Column(
+                      crossAxisAlignment: CrossAxisAlignment.end,
                       children: [
                         Text(
-                          "-\$ 45.00",
+                          transactionsData[index]["totalAmount"],
                           style: TextStyle(
                               fontSize: 14,
                               fontWeight: FontWeight.w500,
                               color: Theme.of(context).colorScheme.onBackground),
                         ),
                         Text(
-                          "Today",
+                          transactionsData[index]["date"],
                           style: TextStyle(
                               fontSize: 14,
                               fontWeight: FontWeight.w400,
