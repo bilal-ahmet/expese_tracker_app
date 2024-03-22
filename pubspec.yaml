@@ -37,6 +37,7 @@ dependencies:
   cupertino_icons: ^1.0.2
   persistent_bottom_nav_bar_v2: ^5.0.0
   font_awesome_flutter: ^10.7.0
+  fl_chart: ^0.66.2
 
 dev_dependencies:
   flutter_test:
